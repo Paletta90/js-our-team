@@ -1,3 +1,7 @@
+// Variabile del div container
+let container = document.getElementById("container");
+
+// Array di oggetti contenete i vari membri del team
 let listMembers = [
     {
         'Nome': 'Wayne Barrett',
@@ -47,3 +51,22 @@ for(let i = 0; i < listMembers.length; i++){
     }
 
 }
+
+// Stampo i vari dati dei mebri a video
+for(let i = 0; i < listMembers.length; i++){
+
+    // Creo un div per ogni membro del team
+    let containerMembers = document.createElement('div');
+    containerMembers.innerHTML += `<h4>Membro numero ${i}:</h4>`
+    for(let key in listMembers[i]){
+
+        // In ogni div stampo i dati del mebro del team
+        containerMembers.innerHTML += `<p>- ${key}: ${listMembers[i][key]}</p>`
+
+        // Appendo il div al div container
+        container.appendChild(containerMembers);
+
+    }
+
+}
+
